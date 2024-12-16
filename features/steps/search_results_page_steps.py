@@ -3,11 +3,6 @@ from behave import given, when, then
 from time import sleep
 
 
-Scenario: User can search for a product
-Given Open target main page
-When Search for soda
-Then Verify search results shown
-
 
 @given('Open target main page')
 def open_main(context):
@@ -24,6 +19,6 @@ def search_product(context):
 
 @then('Verify search results shown')
 def verify_search_results(context):
-    expected_result ='tea'
+    expected_result ='soda'
     actual_result = context.driver.find_element(By.XPATH,"//div[@data-test='resultsHeading']").text
     assert expected_result in actual_result

@@ -10,7 +10,7 @@ def open_main(context):
 @when('Click cart icon')
 def click_cart_icon(context):
     context.driver.find_element(By.XPATH, '//*[@data-test=@web/CartLink"]').click()
-    sleep(5)
+
 
 @then('Verify Your Cart is empty message is shown')
 def verify_your_cart_is_empty(context):
