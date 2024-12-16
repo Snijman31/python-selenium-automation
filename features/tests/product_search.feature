@@ -1,7 +1,15 @@
-Feature: Test Scenarios for Search functionality
+from selenium.webdriver.common.by import By
+from behave import given, when, then
+from time import sleep
+
+
+Feature: Test for search
 
   Scenario: User can search for a product
-    Given Open Google page
-    When Input Car into search field
-    And Click on search icon
-    Then Product results for Car are shown
+    Given Open target main page
+    When Search for soda
+    Then Verify search results shown
+
+
+
+    
