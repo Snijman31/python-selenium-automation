@@ -5,4 +5,4 @@ Feature: # Test Sign in
   Scenario: User can click sign in
     Given Open target main page
     When Click Sign in
-    Then Verify Sign in form opened
+    Then Verify Sign In form opened
