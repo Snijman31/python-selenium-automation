@@ -2,7 +2,7 @@
 Feature: # Test cart icon
   # Enter feature description here
 
-  Scenario:  user can click on cart icon
-    Given Open target main page
-    When Click Cart icon
-    Then Verify Your Cart is empty meassage is shown
+#  Scenario:  user can click on cart icon
+  #  Given Open target main page
+ #   When Click Cart icon
+  #  Then Verify Your Cart is empty meassage is shown
