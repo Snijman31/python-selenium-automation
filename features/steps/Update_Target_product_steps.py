@@ -2,18 +2,21 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
+SEARCH_FIELD = (By.XPATH,'//input[@data-test="@web/Search/SearchInput"]')
+SEARCH_BTN =(By.XPATH,"//button[@data-test='@web/Search/SearchButton']")
 
-#@given('Open target main page')
-#def open_main(context):
- #   context.driver.get('https://www.target.com/')
- #   sleep(2)
 
-#@when('Search for juice')
-#def click_cart_icon(context):
-   # context.driver.find_element(By.XPATH,'//input[@data-test="@web/Search/SearchInput"]') .send_keys('juice')
-   # sleep(2)
 
-#@then('Verify search results shown juice')
-#def verify_juice(context):
-  #  context.driver.find_element(By.CSS_SELECTOR,'.h-display-flex')
-  #  sleep(5)
+@given('Open target main page')
+def open_main(context):
+    context.app.main_page.open_main()
+
+
+@when('Search for juice')
+def search_juice(context):
+    context.app.header.search_products()
+
+
+@then('Verify search results shown juice')
+def verify_search_results(context):
+    context.app.search_results_page.verify_search_results()

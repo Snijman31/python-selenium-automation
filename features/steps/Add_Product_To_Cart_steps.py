@@ -3,31 +3,35 @@ from behave import given, when, then
 from time import sleep
 
 
-@given('Open target main page')
-def open_main(context):
-     context.driver.get('https://www.target.com/')
-sleep(2)
-
-@when('Search for candy')
-def search_for_candy(context):
-    context.driver.find_element(By.XPATH, '//input[@data-test="@web/Search/SearchInput"]') .send_keys('candy')
-    context.driver.find_element(By.CSS_SELECTOR,'[data-test="@web/Search/SearchButton"').click()
-    sleep(5)
 
 
-@when('Click on Add to Cart Button')
-def click_add_to_cart(context):
-    sleep(5)
-    context.driver.find_element(By.CSS_SELECTOR,"[id*=addToCartButton]").click()
-    sleep(3)
+#CART_ICON = (By.CSS_SELECTOR,"[id*=addToCartButton]")
 
 
-@when('Confirm Add to Cart from side Navigation')
-def side_nav_click_add_to_cart(context):
-    sleep(5)
-    context.driver.find_element(By.CSS_SELECTOR,'[style="display: flex;"]').click()
-    sleep(3)
+#@given('Open target main page')
+#def open_main(context):
+   # context.app.main_page.open_main()
+   # sleep(3)
 
-@then('Verify cart has 1 item')
-def verify_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR,'[data-test="modal-drawer-heading"]')
+#@when('Search for candy')
+#def search_for_candy(context):
+  #  context.app.header.search_product()
+ #   sleep(2)
+
+
+#@when('Click on Add to Cart Button')
+#def click_add_to_cart(context):
+
+  #  context.driver.find_element(*CART_ICON).click()
+  #  sleep(2)
+
+
+#@when('Confirm Add to Cart from side Navigation')
+#def side_nav_click_add_to_cart(context):
+
+  #  context.driver.find_element(By.CSS_SELECTOR,'[style="display: flex;"]').click()
+
+
+#@then('Verify Cart has 1 item ')
+#def verify_candy_add_to_cart(context):
+ #   context.app.search_results_page.verify_candy_add_to_cart()
