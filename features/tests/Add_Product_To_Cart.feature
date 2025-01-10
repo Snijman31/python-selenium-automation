@@ -8,5 +8,5 @@ Feature: Test Cart
     And Click on Add to Cart Button
     And Confirm Add to Cart from side Navigation
     Then Verify Cart has 1 item
-   # Then Verify candy is added to cart
+
 

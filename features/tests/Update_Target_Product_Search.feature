@@ -5,4 +5,5 @@ Feature: Test For Search
   Scenario: User can search for juice
     Given Open target main page
     When Search for juice
-   Then Verify search results shown juice
+    Then Verify search results shown juice
+    Then Verify search term product in URL

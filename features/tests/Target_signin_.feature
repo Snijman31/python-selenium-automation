@@ -2,7 +2,8 @@
 Feature: # Test Sign in
   # Enter feature description here
 
- # Scenario: User can click sign in
-  #  Given Open target main page
- #   When Click Sign in
-   # Then Verify Sign In form opened
+  Scenario: User can click sign in
+    Given Open target main page
+    When Click Sign in
+    When Click side navigation Sign In
+    Then Verify Sign In form opened
