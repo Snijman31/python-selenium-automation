@@ -1,17 +1,26 @@
 from selenium.webdriver.common.by import By
 from behave import given, then
-from time import sleep
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 COLOR_OPTIONS = (By.CSS_SELECTOR, "div[aria-label='Carousel'] li img")
 SELECTED_COLOR = (By.CSS_SELECTOR, "[data-test='@web/VariationComponent'] div")
 
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.maximize_window()
+driver.implicitly_wait(15)
+
+
 
 @given('Open target product {product_id} page')
 def open_target(context, product_id):
     context.driver.get(f'https://www.target.com/p/{product_id}')
-    sleep(8)
+
 
 
 @then('Verify user can click through colors')
